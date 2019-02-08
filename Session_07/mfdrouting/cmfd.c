@@ -1,8 +1,3 @@
-#include <fcntl.h>
-#include <math.h>
-#include <sys/param.h>
-
-#define VERSION "0.1"
 #define FREE_ARG char*
 #define NR_END 1
 
@@ -233,8 +228,8 @@ int i,j;
 
 void
 mfdtda(double *tda, const double *z,
-      const int xlen, const int ylen,
-      const double w, const double ppexp) {
+       const int xlen, const int ylen,
+       const double w, const double ppexp) {
     int i, j, k, t;
     int *topovecind;
     double *topovec, delta;
@@ -273,7 +268,7 @@ mfdtda(double *tda, const double *z,
     
     indexx(lattice_size_x * lattice_size_y, topovec, topovecind);
     t = lattice_size_x * lattice_size_y + 1;
-    while(t > 1 ) {
+    while(t > 1) {
         t--;
         i = (topovecind[t]) % lattice_size_x;
         if(i == 0)

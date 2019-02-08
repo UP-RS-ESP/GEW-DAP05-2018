@@ -25,3 +25,14 @@ def vrty(const double[:,:] src):
             mv[i, k] = int(src[i, k] + n * i + k)
 
     return out
+
+def vrty_naive(const double[:,:] src):
+    cdef unsigned int i, k, n, m
+
+    m, n = src.shape[0], src.shape[1]
+    out = np.zeros((m, n), dtype = np.int32)
+    for i in range(m):
+        for k in range(n):
+            out[i, k] = int(src[i, k] + n * i + k)
+
+    return out
